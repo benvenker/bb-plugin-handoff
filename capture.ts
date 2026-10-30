@@ -311,7 +311,8 @@ export interface CaptureOptions {
   untilSeq?: number;
 }
 
-const EVENT_PAGE_SIZE = 1000;
+// bb rejects thread-event pages above 100 with HTTP 400.
+const EVENT_PAGE_SIZE = 100;
 
 export async function captureThread(
   bb: BbPluginApi,
